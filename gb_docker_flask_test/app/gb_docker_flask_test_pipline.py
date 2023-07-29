@@ -32,4 +32,5 @@ accuracy = pipeline.score(X_test, y_test)
 print(f'Точность модели: {accuracy:.4f}')
 
 # Сохранение обученного pipeline на диск
-joblib.dump(pipeline, 'fake_job_postings_pipeline.pkl')
+with open('gb_docker_flask_test_pipeline.dill', 'wb') as f:
+    dill.dump(pipeline, f)
